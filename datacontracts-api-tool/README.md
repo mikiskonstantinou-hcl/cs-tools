@@ -7,12 +7,13 @@ CLI tool for uploading Zeenea Data Product YAML definitions via the synchronizat
 - Python 3.8+
 - `requests` library (`pip install requests`)
 
-## Getting an API Key
+### Getting an API Key
 
-1. Log in to your Zeenea tenant.
-2. Go to **Administration** → **API Keys**.
-3. Click **Create API Key**, give it a name, and set an expiry date.
-4. Copy the generated token — it will not be shown again.
+1. In the Zeenea UI, navigate to **Administration > API Keys**
+2. Click **Create API Key**, give it a name and select the **Admin** scope
+3. Click **Create API Key** again, then click **Copy and go back to list**
+4. Paste the key into `config.json` as the `api_key` value
+5. Remove the `X-API-SECRET: ` prefix from the pasted value if present — only the token itself should be stored
 
 The key is passed as the `X-API-SECRET` HTTP header on every request.
 
